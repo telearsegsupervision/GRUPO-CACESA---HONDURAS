@@ -1487,11 +1487,11 @@
 
     var byNivel = countBy(rows, "nivel");
     var byTipo = countBy(rows, "tipo");
-    var propsMonitoreadas = uniqueSorted(rows.map(function(d){return d.prop;})).length;
+    var propsMonitoreadas = KNOWN_PROPS_ALL.length;
     var operadoresActivos = uniqueSorted(rows.map(function(d){return d.op;})).length;
     els.kpiRow.innerHTML = "";
     els.kpiRow.appendChild(kpiCard("Total incidentes", rows.length, rows.length + " de " + DATA.length + " en total", "--blue-accent", ICONS.total, "--blue-accent-soft", "--blue-accent"));
-    els.kpiRow.appendChild(kpiCard("Propiedades monitoreadas", propsMonitoreadas, "con registros en el periodo", "--teal", ICONS.prop, "--blue-accent-soft", "--teal"));
+    els.kpiRow.appendChild(kpiCard("Propiedades monitoreadas", propsMonitoreadas, "con hoja conectada y en vivo", "--teal", ICONS.prop, "--blue-accent-soft", "--teal"));
     els.kpiRow.appendChild(kpiCard("Operadores", operadoresActivos, "generaron registros", "--teal", ICONS.op, "--blue-accent-soft", "--teal"));
     els.kpiRow.appendChild(kpiCard("Riesgo alto", (byNivel.Alto||0), "requieren seguimiento", "--high", ICONS.alto, "--high-soft", "--high"));
     els.kpiRow.appendChild(kpiCard("Riesgo medio", (byNivel.Medio||0), "bajo monitoreo activo", "--warn", ICONS.medio, "--warn-soft", "--warn-text"));
